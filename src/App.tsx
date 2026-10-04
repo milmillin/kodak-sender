@@ -230,7 +230,9 @@ export default function App() {
               </div>
 
               <div className="stats">
-                <span>{m.rw}×{m.rh}</span>
+                <span title={`Crop after the safety-margin shrink, as framed${srcLandscape ? " (rotated 90° onto the print)" : ""} → full page sent to the printer`}>
+                  crop {fw}×{fh} → page {m.rw}×{m.rh}
+                </span>
                 {output && <><span>{(output.bytes.length / 1024).toFixed(0)} KB</span><span>{packets} packets</span><span>q{output.quality}</span><span className="hide-xs">{output.ms.toFixed(0)} ms</span></>}
                 <span className="hint">{view === "frame" ? `${manual ? "Custom crop" : "Auto crop"}${srcLandscape ? " · rotated 90° onto the print" : ""}` : "Exact pixels sent · pinch/scroll to zoom"}</span>
               </div>
