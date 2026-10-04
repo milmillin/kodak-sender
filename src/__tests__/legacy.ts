@@ -1,9 +1,9 @@
-// Loads the original pure functions out of ../send.html so the TS port can be checked against them.
+// Loads the original pure functions out of reference/send.html so the TS port can be checked against them.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
-const html = readFileSync(fileURLToPath(new URL("../../../send.html", import.meta.url)), "utf8");
+const html = readFileSync(fileURLToPath(new URL("../../reference/send.html", import.meta.url)), "utf8");
 
 function between(s: string, start: string, end: string) {
   const i = s.indexOf(start);
